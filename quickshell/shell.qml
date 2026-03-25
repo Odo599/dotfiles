@@ -1,3 +1,5 @@
 import Quickshell
 
-Scope {}
+Scope {
+    Bar {}
+}
