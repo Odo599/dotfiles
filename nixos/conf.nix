@@ -156,6 +156,7 @@ in
     hyprshot
     gvfs
     cifs-utils
+    upower
 
     # hyprland
     hyprland
