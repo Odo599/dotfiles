@@ -20,17 +20,21 @@ in
 
   # wifi
   networking = {
-  	hostName = "nixos";
-  	networkmanager.enable = true;
-  	nftables.enable = true;
-  	nameservers = ["100.100.1.1" "1.1.1.1" "8.8.8.8"];
-  	firewall = {
-  		checkReversePath = "loose";
-  		allowedUDPPorts = [ config.services.tailscale.port ];
-  	};
+    hostName = "nixos";
+    networkmanager.enable = true;
+    nftables.enable = true;
+    nameservers = [
+      "100.100.1.1"
+      "1.1.1.1"
+      "8.8.8.8"
+    ];
+    firewall = {
+      checkReversePath = "loose";
+      allowedUDPPorts = [ config.services.tailscale.port ];
+    };
   };
 
-  systemd.network.wait-online.enable = false; 
+  systemd.network.wait-online.enable = false;
   boot.initrd.systemd.network.wait-online.enable = false;
 
   time.timeZone = "Australia/Melbourne";
@@ -67,11 +71,13 @@ in
 
   # server samba mount
   fileSystems."/mnt/smb0" = {
-  	device = "//100.100.1.1/samba";
-  	fsType = "cifs";
-  	options = let
-  		automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
-	in ["${automount_opts},credentials=/etc/nixos/smb-secrets"];
+    device = "//100.100.1.1/samba";
+    fsType = "cifs";
+    options =
+      let
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+      in
+      [ "${automount_opts},credentials=/etc/nixos/smb-secrets" ];
   };
 
   # bluetooth
