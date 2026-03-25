@@ -19,10 +19,19 @@ in
   };
 
   # wifi
-  networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
-  networking.nameservers = ["100.100.1.1" "1.1.1.1" "8.8.8.8"];
-  networking.firewall.checkReversePath = "loose";
+  networking = {
+  	hostName = "nixos";
+  	networkmanager.enable = true;
+  	nftables.enable = true;
+  	nameservers = ["100.100.1.1" "1.1.1.1" "8.8.8.8"];
+  	firewall = {
+  		checkReversePath = "loose";
+  		allowedUDPPorts = [ config.services.tailscale.port ];
+  	};
+  };
+
+  systemd.network.wait-online.enable = false; 
+  boot.initrd.systemd.network.wait-online.enable = false;
 
   time.timeZone = "Australia/Melbourne";
 
