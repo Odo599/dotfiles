@@ -1,0 +1,39 @@
+* {
+    font-family: "Font Awesome 6 Free", monospace;
+    font-size: 10pt;
+    color: #ebdbb2;
+}
+
+#waybar {
+    background-color: transparent;
+}
+
+#clock {
+    color: #fabd2f;
+}
+
+#battery {
+    color: #b8bb26;
+}
+
+#network, #bluetooth {
+    color: #8ec07c;
+}
+
+#pulseaudio {
+    color: #83a598;
+}
+
+.modules-center {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.modules-right, .modules-left, .modules-center
+ {
+ 	padding: 5px;
+ 	background-color: rgba(0,0,0,0.6);
+ 	border-radius: 10px;
+}
+
+

@@ -1,0 +1,70 @@
+[
+	{
+		"class": "top",
+		"layer": "top",
+		"position": "top",
+		"font": "Font Awesome 6 Free, monospace 10",
+		"margin-left": 7,
+		"margin-right": 7,
+		"margin-top": 4,
+		"spacing": 10,
+		"modules-left": ["network","idle_inhibitor","tray"],
+		"modules-center": ["custom/ws-icons"],
+		"modules-right": ["battery", "pulseaudio", "clock"],
+		"network": {
+		  "format": " {essid}",
+		  "format-disconnected": "No WiFi ",
+		  "on-click": "nm-connection-editor"
+		},
+		"bluetooth": {
+		 "controller": "hci0",
+		 "format": "{status}",
+		 "format-connected": " {device}",
+		 "format-disconnected": " Off"
+		},
+		"battery": {
+		  "format": "{capacity}% ",
+		  "format-charging": "{capacity}% "
+		},
+		"pulseaudio": {
+		  "format": " {volume}%"
+		},
+		"clock": {
+		  "format": " {0:%a %m/%d}  {0:%H:%M}",
+		  "tooltip": false
+		},
+		"tray": {
+			"spacing": 10
+		},
+		"hyprland/workspaces": {
+			"format": "<sub>{icon}</sub>\n{windows}",
+			"on-click": "activate",
+			"format-icons": {
+			    "urgent": "",
+			    "active": "",
+			    "default": ""
+		 	},
+		 	"window-rewrite-default": "",
+		 	  "window-rewrite": {
+		 	    "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
+		 	    "class<firefox>": "", // Windows whose classes are "firefox"
+		 	    "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+		 	    "foot": "", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
+		 	    "code": "󰨞",
+		 		},
+		},
+		"custom/ws-icons": {
+		  "exec": "~/.config/waybar/ws-icons.py",
+		  "interval": 1,
+		  "return-type": "json",
+		  "on-click": "bash -c 'set -- $(echo \"{tooltip}\"); ws=$(( ({x} / 30) + 1 )); hyprctl dispatch workspace ${!ws}'"
+		},
+		"idle_inhibitor": {
+			"format": "{icon}",
+		    "format-icons": {
+		        "activated": "",
+		        "deactivated": ""
+		    }
+		}
+	}
+]
