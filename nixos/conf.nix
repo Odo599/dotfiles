@@ -100,6 +100,7 @@ in
     blueman.enable = true;
     tailscale.enable = true;
     resolved.enable = true;
+    upower.enable = true;
   };
 
   # greetd
@@ -156,7 +157,6 @@ in
     hyprshot
     gvfs
     cifs-utils
-    upower
 
     # hyprland
     hyprland
