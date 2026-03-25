@@ -174,6 +174,7 @@ in
     feh
     wlogout
     eww
+    quickshell
 
     # applications
     alacritty
