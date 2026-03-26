@@ -142,7 +142,6 @@ in
     unstable.hyprls
     nixfmt
     direnv
-    bc
 
     # system
     psmisc
