@@ -41,38 +41,24 @@ Scope {
                 anchors.right: parent.right
                 bgColor: root.bgColor
                 // Volume
-                Text {
-                    color: textColor
+                TextWid {
                     text: (Volume.muted ? 0 : Volume.volume) + "% "
-                    font.family: mainFont
-                    font.pointSize: 11
                 }
-                Text {
+                IconText {
                     text: (Volume.muted ? "" : "")
-                    color: textColor
-                    font.family: awesomeFont
                 }
                 Divider {}
                 // Battery
-                Text {
-                    color: textColor
+                TextWid {
                     text: Battery.percentage + "% "
-                    font.family: mainFont
-                    font.pointSize: 11
                 }
-                Text {
-                    color: textColor
+                IconText {
                     text: (Battery.charging ? "" : getBatteryIcon(Battery.percentage))
-                    font.pointSize: 11
-                    font.family: awesomeFont
                 }
                 Divider {}
                 // Date and Time
-                Text {
-                    color: textColor
+                TextWid {
                     text: Time.time
-                    font.pointSize: 11
-                    font.family: mainFont
                 }
 
             }
