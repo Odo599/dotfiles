@@ -192,5 +192,6 @@ in
     roboto
     barlow
     inter
+    googlesans-code
   ];
 }
