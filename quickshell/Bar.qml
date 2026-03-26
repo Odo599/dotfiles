@@ -11,6 +11,9 @@ Scope {
     property string transparent: "#00000000"
     property string dividerColor: "#999999"
 
+    property string awesomeFont: "Font Awesome 7 Free Solid"
+    property string mainFont: "Google Sans Code"
+
     function getBatteryIcon(percentage) {
         if (percentage < 10) return ""
         else if (percentage < 33) return ""
@@ -37,18 +40,31 @@ Scope {
             Group {
                 anchors.right: parent.right
                 bgColor: root.bgColor
+                // Volume
+                Text {
+                    color: textColor
+                    text: (Volume.muted ? 0 : Volume.volume) + "% "
+                    font.family: mainFont
+                    font.pointSize: 11
+                }
+                Text {
+                    text: (Volume.muted ? "" : "")
+                    color: textColor
+                    font.family: awesomeFont
+                }
+                Divider {}
                 // Battery
                 Text {
                     color: textColor
                     text: Battery.percentage + "% "
-                    font.family: "Roboto"
+                    font.family: mainFont
                     font.pointSize: 11
                 }
                 Text {
                     color: textColor
                     text: (Battery.charging ? "" : getBatteryIcon(Battery.percentage))
                     font.pointSize: 11
-                    font.family: "Font Awesome 7 Free Solid"
+                    font.family: awesomeFont
                 }
                 Divider {}
                 // Date and Time
@@ -56,7 +72,7 @@ Scope {
                     color: textColor
                     text: Time.time
                     font.pointSize: 11
-                    font.family: "Roboto"
+                    font.family: mainFont
                 }
 
             }

@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+STATE_FILE="/tmp/quickshell-volume"
+
+# Defaults
+VOL=50
+MUTED=0
+
+# Load state if it exists
+if [ -f "$STATE_FILE" ]; then
+    read VOL MUTED < "$STATE_FILE"
+fi
+
+STEP=5
+
+case "$1" in
+    up)
+        VOL=$((VOL + STEP))
+        [ "$VOL" -gt 100 ] && VOL=100
+        wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+        MUTED=0
+        wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
+        ;;
+    down)
+        VOL=$((VOL - STEP))
+        [ "$VOL" -lt 0 ] && VOL=0
+        wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+        ;;
+    mute)
+        if [ "$MUTED" -eq 1 ]; then
+            MUTED=0
+            wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
+        else
+            MUTED=1
+            wpctl set-mute @DEFAULT_AUDIO_SINK@ 1
+        fi
+        ;;
+esac
+
+echo "$VOL $MUTED" > "$STATE_FILE"
