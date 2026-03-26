@@ -7,9 +7,11 @@ Item {
 
     property int spacing: 0
     property int padding: 8
-    required property color bgColor
-    property int radius: 20
+    property color bgColor
+    property int radius: 12
 
+    property bool roundLeftBottom: false
+    property bool roundRightBottom: false
     default property alias content: container.data
 
     height: parent.height
@@ -19,7 +21,8 @@ Item {
     Rectangle {
         id: wrapper
         anchors.fill: parent
-        bottomLeftRadius: root.radius
+        bottomLeftRadius: root.roundLeftBottom ? root.radius : 0
+        bottomRightRadius: root.roundRightBottom ? root.radius : 0
         color: root.bgColor
 
         RowLayout {

@@ -44,10 +44,22 @@ Scope {
             implicitHeight: 40
 
             color: transparent
-            // Right Group
+            // LEFT GROUP
+            Wd.Group {
+                anchors.left: parent.left
+                roundRightBottom: true
+                // Wifi
+                Wd.IconText {
+                    text: (Si.Wifi.connected ? "" : "")
+                }
+                Wd.TextWid {
+                    text: " " + (Si.Wifi.connected ? Si.Wifi.ssid : "Disconnected")
+                }
+            }
+            // RIGHT GROUP
             Wd.Group {
                 anchors.right: parent.right
-                bgColor: root.bgColor
+                roundLeftBottom: true
                 // Volume
                 Wd.TextWid {
                     text: (Si.Volume.muted ? 0 : Si.Volume.volume) + "% "
