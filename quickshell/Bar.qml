@@ -25,7 +25,8 @@ Scope {
     }
 
     function getVolumeIcon(percentage) {
-        if (percentage <= 50) return ""
+        if (percentage <= 0) return ""
+        else if (percentage <= 50) return ""
         else return ""
     }
 

@@ -11,7 +11,7 @@ Singleton {
     property var parsed: {
         let parts = reader.text().trim().split(" ")
         return [
-            Number(parts[0]) || 50,
+            Number(parts[0]) || 0,
             parts[1] || "0"
         ]
     }
