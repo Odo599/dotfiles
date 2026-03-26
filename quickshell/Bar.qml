@@ -24,6 +24,11 @@ Scope {
         else return ""
     }
 
+    function getVolumeIcon(percentage) {
+        if (percentage <= 50) return ""
+        else return ""
+    }
+
     Variants {
         model: Quickshell.screens;
         PanelWindow {
@@ -47,7 +52,7 @@ Scope {
                     text: (Si.Volume.muted ? 0 : Si.Volume.volume) + "% "
                 }
                 Wd.IconText {
-                    text: (Si.Volume.muted ? "" : "")
+                    text: (Si.Volume.muted ? "" : getVolumeIcon(Si.Volume.volume))
                 }
                 Wd.Divider {}
                 // Battery
