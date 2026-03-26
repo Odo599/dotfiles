@@ -3,6 +3,8 @@ import Quickshell.Hyprland
 import Quickshell.Widgets
 import QtQuick
 import QtQuick.Layouts
+import "singletons" as Si
+import "widgets" as Wd
 
 Scope {
     id: root
@@ -37,30 +39,29 @@ Scope {
 
             color: transparent
             // Right Group
-            Group {
+            Wd.Group {
                 anchors.right: parent.right
                 bgColor: root.bgColor
                 // Volume
-                TextWid {
-                    text: (Volume.muted ? 0 : Volume.volume) + "% "
+                Wd.TextWid {
+                    text: (Si.Volume.muted ? 0 : Si.Volume.volume) + "% "
                 }
-                IconText {
-                    text: (Volume.muted ? "" : "")
+                Wd.IconText {
+                    text: (Si.Volume.muted ? "" : "")
                 }
-                Divider {}
+                Wd.Divider {}
                 // Battery
-                TextWid {
-                    text: Battery.percentage + "% "
+                Wd.TextWid {
+                    text: Si.Battery.percentage + "% "
                 }
-                IconText {
-                    text: (Battery.charging ? "" : getBatteryIcon(Battery.percentage))
+                Wd.IconText {
+                    text: (Si.Battery.charging ? "" : getBatteryIcon(Si.Battery.percentage))
                 }
-                Divider {}
+                Wd.Divider {}
                 // Date and Time
-                TextWid {
-                    text: Time.time
+                Wd.TextWid {
+                    text: Si.Time.time
                 }
-
             }
         }
     }
