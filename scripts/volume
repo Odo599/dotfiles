@@ -11,9 +11,15 @@ if [ -f "$STATE_FILE" ]; then
     read VOL MUTED < "$STATE_FILE"
 fi
 
-echo $VOL $MUTED
-
 STEP=5
+
+showvolume () {
+    eww update volumepercent=$VOL
+    eww update volumemuted=$MUTED
+    eww update openedtime=`date +%s%3N`
+    eww update volumewindowvisible=true
+    eww active-windows | grep volumepopup || eww open volumepopup
+}
 
 case "$1" in
     up)
@@ -22,13 +28,15 @@ case "$1" in
         wpctl set-volume @DEFAULT_AUDIO_SINK@ "$(awk "BEGIN {print $VOL/100}")"
         MUTED=0
         wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
-        echo "$(awk "BEGIN {print $VOL/100}")"
+        eww update volumepercent=$(VOL)
+        showvolume
         ;;
     down)
         VOL=$((VOL - STEP))
         [ "$VOL" -lt 0 ] && VOL=0
         wpctl set-volume @DEFAULT_AUDIO_SINK@ "$(awk "BEGIN {print $VOL/100}")"
-        echo "$(awk "BEGIN {print $VOL/100}")"
+        eww update volumepercent=$(VOL)
+        showvolume
         ;;
     mute)
         if [ "$MUTED" -eq 1 ]; then
@@ -38,8 +46,14 @@ case "$1" in
             MUTED=1
             wpctl set-mute @DEFAULT_AUDIO_SINK@ 1
         fi
+        showvolume
+        ;;
+    getpercentage)
+        echo $VOL
+        ;;
+    getmuted)
+        echo $MUTED
         ;;
 esac
 
-echo $VOL $MUTED
 echo "$VOL $MUTED" > "$STATE_FILE"

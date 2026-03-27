@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+STARTED=`eww get openedtime`
+CURRENT=`date +%s%3N`
+TIME_LEFT=$((((STARTED) - CURRENT)))
+
+echo $STARTED
+echo $CURRENT
+echo $TIME_LEFT
+
+[ "$TIME_LEFT" -lt -500 ] && eww close volumepopup

@@ -23,3 +23,32 @@
 window {
     background-color: rgba($color: #000000, $alpha: 0);
 }
+
+// === POPUP ===
+.popup-container {
+    min-width: 150px;
+    min-height: 30px;
+    background-color: rgb(11, 12, 12);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.progress-bar trough {
+    min-width: 180px;
+    min-height: 20px;
+    background-color: rgba($color: #000000, $alpha: 0);
+    border-radius: 10px;
+}
+
+.progress-bar progress {
+    background-color: #e6e6fa;
+    border-radius: 10px;
+}
+
+.progress-bar,
+.progress-bar trough,
+.progress-bar progress {
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
