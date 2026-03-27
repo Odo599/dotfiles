@@ -142,6 +142,8 @@ in
     unstable.hyprls
     nixfmt
     direnv
+    grim
+    slurp
 
     # system
     psmisc
