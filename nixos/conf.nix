@@ -67,6 +67,7 @@ in
 
     # touchpad support
     libinput.enable = true;
+    logind.settings.Login.HandlePowerKey = "ignore";
   };
 
   # server samba mount
