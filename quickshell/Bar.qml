@@ -10,10 +10,12 @@ Scope {
     id: root
     property string textColor: "#E6E6FA"
     property string bgColor: "#0B0C0C"
+    property string selectedColor: "#FFD700"
     property string transparent: "#00000000"
     property string dividerColor: "#999999"
 
     property string awesomeFont: "Font Awesome 7 Free Solid"
+    property string awesomeFontRegular: "Font Awesome 7 Free"
     property string mainFont: "Google Sans Code"
 
     function getBatteryIcon(percentage) {
@@ -44,6 +46,14 @@ Scope {
             implicitHeight: 40
 
             color: transparent
+            // MIDDLE GROUP
+            Wd.Group {
+                anchors.horizontalCenter: parent.horizontalCenter
+                roundRightBottom: true
+                roundLeftBottom: true
+
+                Wd.Workspaces {}
+            }
             // LEFT GROUP
             Wd.Group {
                 anchors.left: parent.left
