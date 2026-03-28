@@ -1,0 +1,62 @@
+* {
+    font: "Google Sans Code 10";
+    text-color: #E6E6FA;
+}
+
+window {
+    background-color: #0B0C0C;
+    border: 2px;
+    border-color: #1F2223;
+    border-radius: 8px;
+    padding: 10px;
+    height: 395px;
+}
+
+mainbox {
+    background-color: transparent;
+    spacing: 8px;
+}
+
+inputbar {
+    children: [ "entry" ];
+    background-color: #111313;
+    border-radius: 6px;
+    padding: 6px 10px;
+}
+
+entry {
+    background-color: transparent;
+}
+
+prompt {
+    enabled: false;
+}
+
+listview {
+    background-color: transparent;
+    spacing: 4px;
+    scrollbar: true;
+    padding: 4px 0px;
+}
+
+element {
+    background-color: #0B0C0C;
+    border-radius: 6px;
+    padding: 6px 10px;
+}
+
+element selected {
+    background-color: #030404;
+    border: 1px;
+    border-color: #E6E6FA;
+}
+
+element-text {
+    background-color: transparent;
+}
+
+scrollbar {
+    handle-width: 6px;
+    handle-color: #2A2D2E;
+    background-color: #00000000;
+}
