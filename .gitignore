@@ -12,3 +12,5 @@ pavucontrol.ini
 pulse
 systemd
 wlogout
+nemo
+gtk-3.0
