@@ -1,7 +1,7 @@
 import QtQuick
 
 Text {
-    color: textColor
+    color: selectedColor
     font.family: awesomeFont
     font.pointSize: 11
 }

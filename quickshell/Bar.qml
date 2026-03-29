@@ -87,8 +87,19 @@ Scope {
                 }
                 Wd.Divider {}
                 // Date and Time
+                Wd.IconText {
+                    text: " "
+                    font.family: awesomeFontRegular
+                }
                 Wd.TextWid {
                     text: Si.Time.time
+                }
+                Wd.IconText {
+                    text: "  "
+                    font.family: awesomeFontRegular
+                }
+                Wd.TextWid {
+                    text: Si.Time.date
                 }
             }
         }
