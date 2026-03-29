@@ -187,7 +187,6 @@ in
     cifs-utils
 
     # hyprland
-    hyprland
     hyprpaper
     hyprlock
     hypridle
