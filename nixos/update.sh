@@ -1,8 +1,8 @@
-#/run/current-system/sw/bin/bash
+bin/bash
 set -e
 
 echo "=== UPDATING SYSTEM ==="
-sudo nixos-rebuild switch -I nixos-config=/home/odo59/.config/nixos/configuration.nix
+sudo nixos-rebuild switch --flake ~/.config/nixos#nixos --impure
 
 echo "=== FORMATTING ==="
 nixfmt ~/.config/nixos/configuration.nix
