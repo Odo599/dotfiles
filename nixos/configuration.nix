@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  # inputs,
   ...
 }:
 
@@ -34,7 +35,7 @@ in
   boot = {
     initrd.systemd.enable = true;
     # Use the systemd-boot EFI boot loader.
-    loader.systemd-boot.enable = true;
+    # loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
   };
 
@@ -120,8 +121,11 @@ in
   # Programs
   programs = {
     firefox.enable = true;
-    hyprland.enable = true;
     waybar.enable = true;
+    hyprland = {
+      enable = true;
+      # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    };
   };
 
   services = {
@@ -143,7 +147,7 @@ in
   security.polkit.enable = true;
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
 
   users.groups.mlocate = { };
 
