@@ -12,6 +12,6 @@ rev=$(readlink /nix/var/nix/profiles/system | grep -o "[0-9]*")
 echo "Commiting revision $rev"
 wd=$(pwd)
 cd ~/.config/nixos
-git add configuration.nix flake.nix flake.lock
+git add configuration.nix flake.nix flake.lock home.nix
 git commit -m "nixos: $rev"
 cd $wd
