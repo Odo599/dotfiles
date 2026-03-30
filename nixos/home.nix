@@ -5,8 +5,19 @@
   ...
 }:
 {
-  home.stateVersion = "26.05";
+  imports = [ inputs.ags.homeManagerModules.default ];
 
+  # Packages
+  home.packages = [
+    inputs.astal.packages.${pkgs.system}.notifd
+  ];
+
+  # Ags
+  programs.ags = {
+    enable = true;
+  };
+
+  # Hyprland
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -241,4 +252,6 @@
       }
     '';
   };
+
+  home.stateVersion = "26.05";
 }
