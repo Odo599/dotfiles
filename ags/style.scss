@@ -1,0 +1,22 @@
+$fg-color: #e6e6fa;
+$bg-color: #0b0c0c;
+$spec-color: #ffd700;
+
+.button {
+  all: unset;
+  background: $bg-color;
+  padding: 8px;
+  border-radius: 20px;
+  min-width: 300px;
+  min-height: 150px;
+}
+
+.button:hover > .label {
+  color: $spec-color;
+}
+
+.label {
+  color: $fg-color;
+  font-family: "Google Sans Code";
+  font-size: xx-large;
+}
