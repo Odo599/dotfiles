@@ -131,6 +131,8 @@
         sensitivity = 0;
         repeat_delay = 300;
 
+        enable_touchpad = true;
+
         touchpad = {
           natural_scroll = true;
           disable_while_typing = true;
