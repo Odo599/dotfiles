@@ -23,7 +23,6 @@ in
       "wheel"
       "input"
       "mlocate"
-      "adbusers"
     ];
   };
 
@@ -175,7 +174,6 @@ in
     direnv
     grim
     slurp
-    android-tools
 
     # system
     psmisc
