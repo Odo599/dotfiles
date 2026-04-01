@@ -174,6 +174,7 @@ in
     direnv
     grim
     slurp
+    libinput
 
     # system
     psmisc
