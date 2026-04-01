@@ -37,8 +37,6 @@ in
     # Use the systemd-boot EFI boot loader.
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
-
-    blacklistedKernelModules = [ "hid_apple" ];
   };
 
   # wifi
