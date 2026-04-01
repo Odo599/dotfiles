@@ -23,7 +23,6 @@ in
       "wheel"
       "input"
       "mlocate"
-      "adbusers"
     ];
   };
 
@@ -65,7 +64,6 @@ in
   time.timeZone = "Australia/Melbourne";
 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.android_sdk.accept_license = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -176,7 +174,6 @@ in
     direnv
     grim
     slurp
-    android-tools
 
     # system
     psmisc
