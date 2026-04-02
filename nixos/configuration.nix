@@ -175,6 +175,7 @@ in
     grim
     slurp
     libinput
+    evtest
 
     # system
     psmisc
