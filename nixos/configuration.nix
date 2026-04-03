@@ -176,6 +176,7 @@ in
     slurp
     libinput
     evtest
+    netcat
 
     # system
     psmisc
