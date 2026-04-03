@@ -177,6 +177,7 @@ in
     libinput
     evtest
     netcat
+    netcat-gnu
 
     # system
     psmisc
