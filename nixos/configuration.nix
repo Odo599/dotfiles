@@ -177,6 +177,7 @@ in
     slurp
     libinput
     evtest
+    ripgrep
 
     # system
     psmisc
