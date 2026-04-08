@@ -218,6 +218,7 @@ in
     nemo
     jetbrains.webstorm
     vscode
+    calibre
   ];
 
   fonts.fontconfig.enable = true;
