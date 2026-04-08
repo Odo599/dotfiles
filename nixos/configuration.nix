@@ -208,6 +208,7 @@ in
     networkmanagerapplet
     feh
     wlogout
+    wl-clipboard
     eww
     quickshell
 
