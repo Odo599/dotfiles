@@ -155,6 +155,7 @@ in
     # Command Line Tools
     fish
     vim
+    neovim
     wget
     micro
     git
