@@ -179,6 +179,7 @@ in
     libinput
     evtest
     ripgrep
+    yazi
 
     # system
     psmisc
