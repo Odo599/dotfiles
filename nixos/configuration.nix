@@ -144,15 +144,6 @@ in
     };
   };
 
-  virtualisation = {
-    containers.enable = true;
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      defaultNetwork.settings.dns_enabled = true;
-    };
-  };
-
   # wayland security
   security.polkit.enable = true;
 
@@ -190,9 +181,6 @@ in
     ripgrep
     yazi
     tmux
-    podman-tui
-    podman-compose
-    dive
 
     # system
     psmisc
