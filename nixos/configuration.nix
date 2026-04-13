@@ -180,6 +180,7 @@ in
     evtest
     ripgrep
     yazi
+    tmux
 
     # system
     psmisc
