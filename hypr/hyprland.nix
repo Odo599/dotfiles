@@ -6,9 +6,7 @@
       ################
       ### MONITORS ###
       ################
-      monitor = [
-        "eDP-1,preferred,auto,1.6"
-      ];
+      # Monitors are defined in ./hyprland_specific.nix
 
       ###################
       ### MY PROGRAMS ###
@@ -130,7 +128,7 @@
         follow_mouse = 1;
         sensitivity = 0;
         repeat_delay = 300;
-        
+
         touchpad = {
           natural_scroll = true;
           disable_while_typing = true;

@@ -6,10 +6,12 @@
   ...
 }:
 
+let specific_config = /home/odo59/.config/nixos/specific_configuration.nix;
+in
 {
   imports = [
     ./hardware-configuration.nix
-  ];
+  ] ++ (if builtins.pathExists specific_config then [specific_config] else []);
 
   users.users.odo59 = {
     isNormalUser = true;
@@ -35,7 +37,6 @@
 
   # wifi
   networking = {
-    hostName = "nixos";
     networkmanager.enable = true;
     networkmanager.dns = "none";
     nftables.enable = true;
