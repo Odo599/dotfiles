@@ -223,6 +223,7 @@ in
     nemo
     jetbrains.webstorm
     vscode
+    netbeans
     calibre
   ];
 
