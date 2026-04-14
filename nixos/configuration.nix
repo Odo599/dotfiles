@@ -6,12 +6,14 @@
   ...
 }:
 
-let specific_config = /home/odo59/.config/nixos/specific_configuration.nix;
+let
+  specific_config = /home/odo59/.config/nixos/specific_configuration.nix;
 in
 {
   imports = [
     ./hardware-configuration.nix
-  ] ++ (if builtins.pathExists specific_config then [specific_config] else []);
+  ]
+  ++ (if builtins.pathExists specific_config then [ specific_config ] else [ ]);
 
   users.users.odo59 = {
     isNormalUser = true;
@@ -190,6 +192,8 @@ in
     hyprshot
     gvfs
     cifs-utils
+    zip
+    unzip
 
     # hyprland
     hyprpaper
