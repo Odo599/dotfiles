@@ -196,7 +196,7 @@ in
     hyprshot
     gvfs
     cifs-utils
-    jdk
+    jdk11
 
     # hyprland
     hyprpaper
