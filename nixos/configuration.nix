@@ -6,15 +6,9 @@
   ...
 }:
 
-let
-  unstable = import <nixos-unstable> {
-    config.allowUnfree = true;
-  };
-in
 {
   imports = [
     ./hardware-configuration.nix
-    ./apple-silicon-support
   ];
 
   users.users.odo59 = {
@@ -171,7 +165,6 @@ in
     gh
     statix
     mlocate
-    unstable.hyprls
     nixfmt
     direnv
     grim
