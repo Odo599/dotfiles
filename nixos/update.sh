@@ -15,6 +15,6 @@ echo "Commiting revision $rev"
 echo "> cd ~/.config/nixos"
 cd ~/.config/nixos
 echo "> git add configuration.nix flake.nix flake.lock home.nix ../hypr/hyprland.conf ../hypr/hyprland.nix"
-git add configuration.nix flake.nix flake.lock home.nix ../hypr/hyprland.conf ../hypr/hyprland.nix
+git add configuration.nix flake.nix flake.lock home.nix ../hypr/hyprland.nix
 echo '> git commit -m "nixos: $rev"'
 git commit -m "nixos: $rev"
