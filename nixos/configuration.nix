@@ -196,7 +196,6 @@ in
     hyprshot
     gvfs
     cifs-utils
-    jdk11
 
     # hyprland
     hyprpaper
@@ -223,7 +222,6 @@ in
     nemo
     jetbrains.webstorm
     vscode
-    netbeans
     calibre
   ];
 
