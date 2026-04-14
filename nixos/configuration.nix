@@ -196,11 +196,13 @@ in
     hyprshot
     gvfs
     cifs-utils
+    jdk
 
     # hyprland
     hyprpaper
     hyprlock
     hypridle
+    hyprpicker
 
     # background apps
     dunst
