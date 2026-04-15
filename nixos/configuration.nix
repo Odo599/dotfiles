@@ -177,6 +177,7 @@ in
     ripgrep
     yazi
     tmux
+    uv
 
     # system
     psmisc
