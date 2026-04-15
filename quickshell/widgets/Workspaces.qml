@@ -4,6 +4,7 @@ import "../singletons" as Si
 
 Item {
     id: root
+    required property string screenName
 
     implicitWidth: row.implicitWidth
     implicitHeight: row.implicitHeight
@@ -26,11 +27,18 @@ Item {
         else return awesomeFont
     }
 
+    function getRelevantWorkspaces(ws) {
+        return ws.filter((w) => {
+            print(w.monitor, screenName)
+            return w.monitor === screenName
+        })
+    }
+
     Row {
         id: row
         spacing: 10
         Repeater {
-            model: Si.Workspaces.workspaces
+            model: getRelevantWorkspaces(Si.Workspaces.workspaces)
             delegate: IconText {
                 text: (getIcon(modelData))
                 color: (getColor(modelData, Si.Workspaces.currentWorkspace))

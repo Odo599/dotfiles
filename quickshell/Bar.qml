@@ -52,7 +52,9 @@ Scope {
                 roundRightBottom: true
                 roundLeftBottom: true
 
-                Wd.Workspaces {}
+                Wd.Workspaces {
+                    screenName: screen.name
+                }
             }
             // LEFT GROUP
             Wd.Group {
