@@ -220,6 +220,7 @@ in
     nemo
     vscode
     calibre
+    qgis
   ];
 
   fonts.fontconfig.enable = true;
