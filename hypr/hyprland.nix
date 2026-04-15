@@ -26,7 +26,7 @@
         "systemctl --user start hyprpolkitagent"
         "quickshell"
         "hyprpaper"
-        "eww open wallpaper && sleep 1 && pkill hyprpaper"
+        "sleep 0.1 && eww open wallpaper"
         "hypridle"
       ];
 
