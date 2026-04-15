@@ -218,7 +218,6 @@ in
     # applications
     alacritty
     nemo
-    codeblocks
     vscode
     calibre
   ];
