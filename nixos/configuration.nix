@@ -218,7 +218,7 @@ in
     # applications
     alacritty
     nemo
-    jetbrains.webstorm
+    codeblocks
     vscode
     calibre
   ];
