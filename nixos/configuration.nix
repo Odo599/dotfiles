@@ -178,6 +178,7 @@ in
     yazi
     tmux
     uv
+    notcurses
 
     # system
     psmisc
