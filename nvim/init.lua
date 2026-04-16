@@ -6,4 +6,5 @@ vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
 require("config.lazy")
+require("config.binds")
 vim.cmd[[colorscheme tokyonight-night]]
