@@ -29,7 +29,6 @@ Item {
 
     function getRelevantWorkspaces(ws) {
         return ws.filter((w) => {
-            print(w.monitor, screenName)
             return w.monitor === screenName
         })
     }

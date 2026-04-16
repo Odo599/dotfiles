@@ -177,6 +177,8 @@ in
     ripgrep
     yazi
     tmux
+    uv
+    notcurses
 
     # system
     psmisc
