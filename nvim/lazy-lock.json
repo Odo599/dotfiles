@@ -9,11 +9,12 @@
   "neogit": { "branch": "master", "commit": "e06745228600a585b88726fc9fba44a373c15a47" },
   "nui.nvim": { "branch": "main", "commit": "de740991c12411b663994b2860f1a4fd0937c130" },
   "nvim-cmp": { "branch": "main", "commit": "a1d504892f2bc56c2e79b65c6faded2fd21f3eca" },
-  "nvim-lspconfig": { "branch": "master", "commit": "d10ce09e42bb0ca8600fd610c3bb58676e61208d" },
+  "nvim-lspconfig": { "branch": "master", "commit": "b80f82f59544f0770981b5a6c7d129ca276dab36" },
   "nvim-ts-autotag": { "branch": "main", "commit": "88c1453db4ba7dd24131086fe51fdf74e587d275" },
   "plenary.nvim": { "branch": "master", "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b" },
   "remote-nvim.nvim": { "branch": "main", "commit": "9992c2fb8bf4f11aca2c8be8db286b506f92efcb" },
   "telescope.nvim": { "branch": "master", "commit": "471eebb1037899fd942cc0f52c012f8773505da1" },
+  "tokyonight.nvim": { "branch": "main", "commit": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6" },
   "trouble.nvim": { "branch": "main", "commit": "bd67efe408d4816e25e8491cc5ad4088e708a69a" },
   "yazi.nvim": { "branch": "main", "commit": "172bd64a4c2d3adbe2e0ef56289f47ffe139ca55" }
 }

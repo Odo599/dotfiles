@@ -224,5 +224,11 @@ require("lazy").setup({
         keys = {
             { "<leader>gg", "<cmd>Neogit<cr>", desc="Show Neogit UI" }
         }
+    },
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {}
     }
 })
