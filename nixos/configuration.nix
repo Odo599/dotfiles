@@ -12,6 +12,7 @@ in
 {
   imports = [
     ./hardware-configuration.nix
+    ./packages.nix
   ]
   ++ (if builtins.pathExists specific_config then [ specific_config ] else [ ]);
 
@@ -145,84 +146,8 @@ in
   security.polkit.enable = true;
 
   xdg.portal.enable = true;
-  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
 
   users.groups.mlocate = { };
-
-  environment.systemPackages = with pkgs; [
-    # Command Line Tools
-    fish
-    vim
-    neovim
-    wget
-    micro
-    git
-    tree
-    file
-    htop
-    entr
-    bind
-    cargo
-    xeyes
-    nodejs_24
-    gh
-    statix
-    mlocate
-    nixfmt
-    direnv
-    grim
-    slurp
-    libinput
-    evtest
-    ripgrep
-    yazi
-    tmux
-    uv
-    notcurses
-
-    # system
-    psmisc
-    libnotify
-    xdg-desktop-portal
-    hyprpolkitagent
-    libsForQt5.qtwayland
-    pavucontrol
-    bluez
-    brightnessctl
-    gccgo15
-    python3
-    hyprshot
-    gvfs
-    cifs-utils
-    zip
-    unzip
-
-    # hyprland
-    hyprpaper
-    hyprlock
-    hypridle
-    hyprpicker
-
-    # background apps
-    dunst
-    rofi
-    file-roller
-    hyprcursor
-    xdg-desktop-portal
-    xdg-desktop-portal-wlr
-    networkmanagerapplet
-    feh
-    wlogout
-    wl-clipboard
-    eww
-    quickshell
-
-    # applications
-    alacritty
-    nemo
-    vscode
-    calibre
-  ];
 
   fonts.fontconfig.enable = true;
 
