@@ -18,5 +18,11 @@ return {
             "nvim-telescope/telescope.nvim"
         },
         cmd = "Neogit",
+        config = function() require("neogit").setup({
+            commit_editor = {
+                kind = "floating",
+                show_staged_diff = false
+            }
+        }) end
     },
 }
