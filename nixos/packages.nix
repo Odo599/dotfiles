@@ -37,6 +37,8 @@
     uv
     notcurses
     copyq
+    zip
+    unzip
 
     # system
     psmisc
@@ -52,8 +54,6 @@
     hyprshot
     gvfs
     cifs-utils
-    zip
-    unzip
 
     # hyprland
     hyprpaper
