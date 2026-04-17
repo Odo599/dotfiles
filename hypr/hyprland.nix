@@ -60,8 +60,8 @@
         rounding = 7;
         rounding_power = 3;
 
-        active_opacity = 1.0;
-        inactive_opacity = 0.95;
+        active_opacity = 1;
+        inactive_opacity = 0.9;
 
         shadow = {
           enabled = true;
@@ -72,9 +72,11 @@
 
         blur = {
           enabled = true;
-          size = 3;
+          size = 10;
           passes = 1;
-          vibrancy = 0.1696;
+          new_optimizations = true;
+          ignore_opacity = true;
+          noise = 0;
         };
       };
 
@@ -230,6 +232,7 @@
         float = 1
         pin = 1
       }
+      windowrule = opacity 0.9 override, match:class alacritty 
     '';
   };
 }
