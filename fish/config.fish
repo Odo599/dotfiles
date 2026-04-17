@@ -1,3 +1,5 @@
+set fish_greeting
+
 if status is-interactive
     abbr --add nixconf nvim -p ~/.config/nixos/configuration.nix ~/.config/nixos/flake.nix
     abbr --add nixbuild bash ~/.config/nixos/update.sh
