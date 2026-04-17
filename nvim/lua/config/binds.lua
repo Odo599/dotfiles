@@ -1,5 +1,6 @@
 local telescope_builtin = require("telescope.builtin")
 local neogit = require("neogit")
+local fterm = require("FTerm")
 
 vim.keymap.set("n","<leader>ff", telescope_builtin.find_files)
 vim.keymap.set("n","<leader>bb", telescope_builtin.buffers)
@@ -11,3 +12,6 @@ vim.keymap.set(
     "<leader>gg", 
     function() neogit.open({kind = "floating"}) end
 )
+
+vim.keymap.set("n", "<A-t>",fterm.toggle)
+vim.keymap.set("t", "<A-t>",fterm.toggle)

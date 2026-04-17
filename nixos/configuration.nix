@@ -71,6 +71,10 @@ in
     HYPRSHOT_DIR = "/home/odo59/Screenshots";
   };
 
+  environment.variables = rec {
+    SHELL  = "fish";
+  };
+
   swapDevices = [
     {
       device = "/swapfile";
