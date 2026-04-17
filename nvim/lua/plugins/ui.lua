@@ -1,19 +1,5 @@
 return {
-    {
-        "smoka7/hop.nvim",
-        version = "*",
-        opts = {
-            keys = "etovxqpdygfblzhckisuran"
-        }
-    },
-    {
-        "numToStr/Comment.nvim",
-    },
-    {
-        "kylechui/nvim-surround",
-        event = "VeryLazy"
-    },
-    {
+   {
         "nvim-lualine/lualine.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function() require("lualine").setup({
