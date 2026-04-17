@@ -14,5 +14,13 @@ return {
                lualine_z = {"location"},
            } 
         }) end,
+    },
+    {
+        "goolord/alpha-nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            local startify = require("alpha.themes.theta")
+            require("alpha").setup(startify.config)
+        end,
     }
 }
