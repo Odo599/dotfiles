@@ -28,6 +28,7 @@
         "hyprpaper"
         "sleep 0.1 && eww open wallpaper"
         "hypridle"
+        "copyq --start-server"
       ];
 
       #############################

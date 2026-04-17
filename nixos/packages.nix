@@ -36,6 +36,7 @@
     tmux
     uv
     notcurses
+    copyq
 
     # system
     psmisc
