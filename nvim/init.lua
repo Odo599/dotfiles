@@ -9,3 +9,4 @@ vim.opt.cmdheight = 0
 require("config.lazy")
 require("config.binds")
 vim.cmd[[colorscheme tokyonight-night]]
+

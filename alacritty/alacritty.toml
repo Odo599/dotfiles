@@ -4,3 +4,7 @@ shell.program = "fish"
 [window]
 dynamic_title = false
 title = "alacritty"
+
+[font.normal]
+family = "MonaspiceNe Nerd Font"
+style = "Regular"

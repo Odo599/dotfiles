@@ -159,6 +159,7 @@ in
     inter
     googlesans-code
     nerd-fonts.fira-code
+    nerd-fonts.monaspace
   ];
 
   system.stateVersion = "25.11"; # DO NOT CHANGE
