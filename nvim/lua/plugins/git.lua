@@ -22,6 +22,9 @@ return {
             commit_editor = {
                 show_staged_diff = false
             }
-        }) end
+        }) end,
     },
+    {
+        "lewis6991/gitsigns.nvim",
+    }
 }
