@@ -169,11 +169,6 @@
         "$mainMod SHIFT, S, exec, hyprshot -m region"
         "$mainMod, L, exec, loginctl lock-session"
 
-        "$mainMod, left, movefocus, l"
-        "$mainMod, right, movefocus, r"
-        "$mainMod, up, movefocus, u"
-        "$mainMod, down, movefocus, d"
-
         "$mainMod, 1, exec, python3 ~/.config/hypr/workspace.py 1"
         "$mainMod, 2, exec, python3 ~/.config/hypr/workspace.py 2"
         "$mainMod, 3, exec, python3 ~/.config/hypr/workspace.py 3"
