@@ -19,6 +19,7 @@ return {
         },
         cmd = "Neogit",
         config = function() require("neogit").setup({
+            disable_hint = true,
             commit_editor = {
                 show_staged_diff = false
             }
