@@ -39,6 +39,7 @@
     copyq
     zip
     unzip
+    zoxide
 
     # system
     psmisc
