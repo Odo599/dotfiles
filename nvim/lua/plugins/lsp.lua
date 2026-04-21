@@ -71,10 +71,29 @@ return {
                 sources = {
                     { name = "nvim_lsp" },
                 },
+                window = {
+                    completion = {
+                        winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:PmenuSel",
+                        side_padding = 0,
+                        col_offset = -3,
+                    },
+                    documentation = {
+                        border = "rounded",
+                    },
+                }
             })
 
             require("lspconfig")
         end,
+    },
+    {
+        "nvim-flutter/flutter-tools.nvim",
+        lazy = false,
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "stevearc/dressing.nvim"
+        },
+        config = function() require("flutter-tools").setup() end, 
     },
     {
         "folke/trouble.nvim",

@@ -9,5 +9,12 @@ vim.opt.relativenumber = true
 
 require("config.lazy")
 require("config.binds")
+
+vim.diagnostic.config({
+    virtual_text = {
+        prefix = '●',
+        spacing = 4,
+    },
+})
 vim.cmd[[colorscheme tokyonight-night]]
 

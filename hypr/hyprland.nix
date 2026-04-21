@@ -160,7 +160,7 @@
         "$mainMod, B, exec, $browser"
         "$mainMod, C, exec, $code"
         "$mainMod, Z, killactive,"
-        "$mainMod, M, exit,"
+        "$mainMod, M, exec, $wlogout"
         "$mainMod, E, exec, $fileManager"
         "$mainMod, V, togglefloating,"
         "$mainMod, SPACE, exec, $menu"
