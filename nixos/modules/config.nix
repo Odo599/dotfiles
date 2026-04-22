@@ -11,7 +11,6 @@ let
 in
 {
   imports = [
-    ./hardware-configuration.nix
     ./packages.nix
   ]
   ++ (if builtins.pathExists specific_config then [ specific_config ] else [ ]);
@@ -41,11 +40,11 @@ in
   # wifi
   networking = {
     networkmanager.enable = true;
-    networkmanager.dns = "none";
+    # networkmanager.dns = "none";
     nftables.enable = true;
     resolvconf.enable = false;
     nameservers = [
-      "100.100.1.1"
+      "100.100.100.100"
       "1.1.1.1"
       "8.8.8.8"
     ];
@@ -92,6 +91,8 @@ in
       enable = true;
       pulse.enable = true;
     };
+
+    resolved.enable = true;
 
     # touchpad support
     libinput.enable = true;

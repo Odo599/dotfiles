@@ -1,51 +1,73 @@
 {
-  description = "flake for nixos";
+    description = "flake for nixos";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    inputs = {
+        nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+        home-manager = {
+            url = "github:nix-community/home-manager";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+        hyprland = {
+            url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+        astal.url = "github:aylur/astal";
+        ags.url = "github:aylur/ags";
     };
 
-    hyprland = {
-      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    astal.url = "github:aylur/astal";
-    ags.url = "github:aylur/ags";
-  };
-
-  outputs =
+    outputs =
     {
-      self,
-      nixpkgs,
-      hyprland,
-      ...
+        self,
+        nixpkgs,
+        hyprland,
+        ...
     }@inputs:
     {
-      nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
-          system = "aarch64-linux";
-          specialArgs = {
-            inherit inputs;
-          };
+        nixosConfigurations = {
+            laptop = nixpkgs.lib.nixosSystem {
+                system = "aarch64-linux";
+                specialArgs = {
+                    inherit inputs;
+                };
 
-          modules = [
-            /home/odo59/.config/nixos/configuration.nix
-            inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = {
-                inherit inputs;
-              };
-              home-manager.users.odo59 = import ./home.nix;
-            }
-          ];
+                modules = [
+                    /home/odo59/.config/nixos/modules/config.nix
+                    /home/odo59/.config/nixos/modules/laptop.nix
+                    inputs.home-manager.nixosModules.home-manager
+                    {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.useUserPackages = true;
+                        home-manager.extraSpecialArgs = {
+                            inherit inputs;
+                        };
+                        home-manager.users.odo59 = import ./home.nix;
+                    }
+                ];
+            };
+
+            home-laptop = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                specialArgs = {
+                    inherit inputs;
+                };
+
+                modules = [
+                    /home/odo59/.config/nixos/modules/config.nix
+                    /home/odo59/.config/nixos/modules/home-laptop.nix
+                    inputs.home-manager.nixosModules.home-manager
+                    {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.useUserPackages = true;
+                        home-manager.extraSpecialArgs = {
+                            inherit inputs;
+                        };
+                        home-manager.users.odo59 = import ./home.nix;
+                    }
+                ];
+            };
         };
-      };
     };
 }
