@@ -11,7 +11,7 @@ return {
         dependencies = { "williamboman/mason.nvim" },
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "pyright", "html", "ts_ls" },
+                ensure_installed = { "pyright", "html", "ts_ls", "nil_ls" },
             })
         end,
     },
@@ -29,6 +29,7 @@ return {
                 },
             })
             vim.lsp.config("html", {})
+            vim.lsp.config("nil_ls", {})
             vim.lsp.config("ts_ls", {
                 settings = {
                     typescript = {
@@ -49,6 +50,7 @@ return {
             vim.lsp.enable("pyright")
             vim.lsp.enable("html")
             vim.lsp.enable("ts_ls")
+            vim.lsp.enable("nil_ls")
 
             vim.keymap.set("n", "gd", vim.lsp.buf.definition)
             vim.keymap.set("n", "K", vim.lsp.buf.hover)
