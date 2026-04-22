@@ -81,6 +81,7 @@
     nemo
     vscode
     calibre
+    thunderbird
   ];
 
 
