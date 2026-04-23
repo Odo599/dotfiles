@@ -95,7 +95,14 @@ return {
             "nvim-lua/plenary.nvim",
             "stevearc/dressing.nvim"
         },
-        config = function() require("flutter-tools").setup() end, 
+        config = function() require("flutter-tools").setup({
+            lsp = {
+                settings = {
+                    completeFunctionCalls = false,
+                    showTodos = false,
+                }
+            }
+        }) end, 
     },
     {
         "folke/trouble.nvim",
