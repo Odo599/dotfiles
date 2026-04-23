@@ -195,6 +195,7 @@
         zip
         unzip
         zoxide
+        flutter
 
         # system
         psmisc
@@ -237,5 +238,6 @@
         vscode
         calibre
         thunderbird
+        vlc
     ];
 }
