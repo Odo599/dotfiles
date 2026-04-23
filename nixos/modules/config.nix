@@ -196,6 +196,7 @@
         unzip
         zoxide
         flutter
+        stow
 
         # system
         psmisc
