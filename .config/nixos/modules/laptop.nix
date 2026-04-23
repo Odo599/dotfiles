@@ -7,7 +7,7 @@
 
 {
     imports = [
-        "../apple-silicon-support"
-        "./hardware/laptop.nix"
+        ./hardware/laptop.nix
+        ../apple-silicon-support
     ];
 }
