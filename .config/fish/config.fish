@@ -1,5 +1,6 @@
 set fish_greeting
 set -g fish_transient_prompt 1
+set -g fish_key_bindings fish_vi_key_bindings
 
 if status is-interactive
     abbr --add nixconf nvim -p ~/.config/nixos/configuration.nix ~/.config/nixos/flake.nix
