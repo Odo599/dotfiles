@@ -43,7 +43,9 @@
                             home-manager.extraSpecialArgs = {
                                 inherit inputs;
                             };
-                            home-manager.users.odo59 = import ./home.nix;
+                            home-manager.users.odo59.imports = [
+                                ./home.nix
+                            ];
                         }
                     ];
                 };
@@ -64,7 +66,10 @@
                             home-manager.extraSpecialArgs = {
                                 inherit inputs;
                             };
-                            home-manager.users.odo59 = import ./home.nix;
+                            home-manager.users.odo59.imports = [
+                                ./home.nix
+                                ./modules/hyprland/home-laptop.nix
+                            ];
                         }
                     ];
                 };
