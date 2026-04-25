@@ -85,6 +85,7 @@
         };
 
         resolved.enable = true;
+        upower.enable = true;
 
         # touchpad support
         libinput.enable = true;
@@ -197,6 +198,8 @@
         zoxide
         flutter
         stow
+        jc
+        jq
 
         # system
         psmisc

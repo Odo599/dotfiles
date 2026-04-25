@@ -6,32 +6,29 @@ import Quickshell.Io
 
 
 Singleton {
-    readonly property string percentage: Math.round(100 * Number(chargeNowReader.text().trim()) / Number(chargeFullReader.text().trim()))
-    readonly property bool charging: statusReader.text().trim() !== "Discharging"
+    property string percentage: "100"
+    property bool charging: false 
 
-    FileView {
-        id: statusReader
-        path: Qt.resolvedUrl("/home/odo59/.config/quickshell/powersymlink/status")
-    }
+    Process {
+        id: batteryProc
+        command: ["bash","-c","upower -b | jc --upower"]
+        running: true
+        stdout: StdioCollector {
+            onStreamFinished: {
+                const parsed = JSON.parse(this.text)
+                percentage = parsed[0].detail.percentage
+                charging = parsed[0].detail.state == "discharging" ? false : true
+            }
+        }
 
-    FileView {
-        id: chargeNowReader
-        path: Qt.resolvedUrl("/home/odo59/.config/quickshell/powersymlink/energy_now")
-    }
-
-    FileView {
-        id: chargeFullReader
-        path: Qt.resolvedUrl("/home/odo59/.config/quickshell/powersymlink/energy_full")
     }
 
     Timer {
-        interval: 5000
+        interval: 1000
         running: true
         repeat: true
         onTriggered: {
-            chargeNowReader.reload()
-            chargeFullReader.reload()
-            statusReader.reload()
+            batteryProc.running = true
         }
     }
 }
