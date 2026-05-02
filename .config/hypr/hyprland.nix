@@ -216,6 +216,7 @@
         ", XF86AudioPause, exec, playerctl play-pause"
         ", XF86AudioPlay, exec, playerctl play-pause"
         ", XF86AudioPrev, exec, playerctl previous"
+        "$mainMod SHIFT, M, exec, systemctl suspend"
       ];
     };
 
