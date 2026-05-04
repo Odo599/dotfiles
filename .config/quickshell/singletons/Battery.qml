@@ -16,7 +16,7 @@ Singleton {
         stdout: StdioCollector {
             onStreamFinished: {
                 const parsed = JSON.parse(this.text)
-                percentage = parsed[0].detail.percentage
+                percentage = Math.round(parsed[0].detail.percentage)
                 charging = parsed[0].detail.state == "discharging" ? false : true
             }
         }
