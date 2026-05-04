@@ -16,7 +16,7 @@ Scope {
 
     property string awesomeFont: "Font Awesome 7 Free Solid"
     property string awesomeFontRegular: "Font Awesome 7 Free"
-    property string mainFont: "Google Sans Code"
+    property string mainFont: "MonaspiceRnNerd Font"
 
     function getBatteryIcon(percentage) {
         if (percentage < 10) return ""
