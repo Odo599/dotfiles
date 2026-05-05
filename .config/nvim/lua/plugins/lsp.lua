@@ -120,4 +120,20 @@ return {
         "m4xshen/autoclose.nvim",
         config = function() require("autoclose").setup() end
     },
+    {
+        "windwp/nvim-ts-autotag",
+        config = function() require("nvim-ts-autotag").setup() end
+    },
+    {
+        'nvim-treesitter/nvim-treesitter',
+        lazy = false,
+        build = ':TSUpdate',
+        config = function() 
+            require("nvim-treesitter").install({"typescript", "tsx"}) 
+            vim.api.nvim_create_autocmd('FileType', {
+                pattern = { "typescriptreact" },
+                callback = function() vim.treesitter.start() end,
+            })
+        end
+    }
 }

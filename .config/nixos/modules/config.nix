@@ -200,6 +200,7 @@
         stow
         jc
         jq
+        tree-sitter
 
         # system
         psmisc
