@@ -172,17 +172,11 @@
         git
         tree
         file
-        htop
-        entr
-        bind
-        cargo
-        xeyes
+        btop
         nodejs_24
         gh
-        statix
         mlocate
         nixfmt-tree
-        direnv
         grim
         slurp
         libinput
