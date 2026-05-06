@@ -1,0 +1,32 @@
+[global]
+follow = keyboard
+enable_posix_regex = true
+notification_limit = 5
+offset = (5,5)
+
+progress_bar_corner_radius = 2
+
+frame_color = "#999999"
+
+font = MonaspiceRnNerd Font 10
+markup = full
+alignment = center
+vertical_alignment = center
+
+icon_position = off
+browser = /usr/bin/env firefox -new-tab
+corner_radius = 7
+
+mouse_left_click = close_current
+mouse_right_click = do_action
+
+frame_width = 2
+
+[urgency_normal]
+background = "#0B0C0C"
+foreground = "#E6E6FA"
+
+[urgency_critical]
+background = "#0B0C0C"
+foreground = "#FFD700"
+
