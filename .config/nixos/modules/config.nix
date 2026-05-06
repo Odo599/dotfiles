@@ -195,6 +195,7 @@
         jc
         jq
         tree-sitter
+        bind # nslookup
 
         # system
         psmisc
