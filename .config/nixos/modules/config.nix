@@ -35,11 +35,6 @@
         # networkmanager.dns = "none";
         nftables.enable = true;
         resolvconf.enable = false;
-        nameservers = [
-            "100.100.100.100"
-            "1.1.1.1"
-            "8.8.8.8"
-        ];
         firewall = {
             checkReversePath = "loose";
             allowedUDPPorts = [ config.services.tailscale.port ];
