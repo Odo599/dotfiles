@@ -123,6 +123,7 @@
     services = {
         blueman.enable = true;
         tailscale.enable = true;
+        desktopManager.plasma6.enable = true;
     };
 
     # greetd

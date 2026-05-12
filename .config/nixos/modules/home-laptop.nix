@@ -11,7 +11,7 @@
     services.flatpak.enable = true;
 
     programs.steam.enable = true;
-    nameservers = [
+    networking.nameservers = [
         "100.100.100.100"
         "1.1.1.1"
         "8.8.8.8"
