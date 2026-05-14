@@ -131,6 +131,7 @@
       input = {
         kb_layout = "us";
         kb_variant = "dvorak";
+        kb_options = "compose:ralt";
         follow_mouse = 1;
         sensitivity = 0;
         repeat_delay = 300;
