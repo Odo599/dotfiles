@@ -45,6 +45,7 @@
                             };
                             home-manager.users.odo59.imports = [
                                 ./home.nix
+                                ./modules/hyprland/laptop.nix
                             ];
                         }
                     ];
