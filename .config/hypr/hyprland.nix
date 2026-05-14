@@ -11,7 +11,7 @@
       ###################
       ### MY PROGRAMS ###
       ###################
-      "$terminal" = "alacritty";
+      "$terminal" = "kitty";
       "$fileManager" = "nemo";
       "$menu" = "pidof rofi || rofi -show drun";
       "$browser" = "firefox";
@@ -26,7 +26,6 @@
         "systemctl --user start hyprpolkitagent"
         "quickshell"
         "hyprpaper"
-        "sleep 0.1 && eww open wallpaper"
         "hypridle"
         "copyq --start-server"
       ];
@@ -72,11 +71,15 @@
 
         blur = {
           enabled = true;
-          size = 10;
-          passes = 1;
+          size = 20;
+          passes = 3;
+          brightness = 1;
+          contrast = 1;
+          noise = 0.02;
+          popups = true;
+          popups_ignorealpha = 0.2;
+          special = true;
           new_optimizations = true;
-          ignore_opacity = true;
-          noise = 0;
         };
       };
 
