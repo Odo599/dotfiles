@@ -1,12 +1,75 @@
-[terminal]
-shell.program = "fish"
-
 [window]
 dynamic_title = false
 title = "alacritty"
-opacity = 0.95
-blur = true
+opacity = 0.7
+
+[scrolling]
+history = 10000
+
+[cursor.style]
+blinking = "Off"
+
+[mouse]
+hide_when_typing = true
+
+[bell]
+duration = 0
+command = "None"
+
+[[hints.enabled]]
+regex = "(https?://|www\\.)[^\\s]+"
+command = "xdg-open"
+hyperlinks = true
+post_processing = true
+
+[font]
+size = 11.0
 
 [font.normal]
 family = "MonaspiceRnNerd Font"
 style = "Regular"
+
+[font.bold]
+family = "MonaspiceRnNerd Font"
+style = "Bold"
+
+[font.italic]
+family = "MonaspiceRnNerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "MonaspiceRnNerd Font"
+style = "Bold Italic"
+
+[colors.primary]
+foreground = "#a9b1d6"
+background = "#1a1b26"
+
+[colors.cursor]
+text = "#1a1b26"
+cursor = "#c0caf5"
+
+[colors.selection]
+text = "CellForeground"
+background = "#28344a"
+
+[colors.normal]
+black   = "#414868"
+red     = "#f7768e"
+green   = "#73daca"
+yellow  = "#e0af68"
+blue    = "#7aa2f7"
+magenta = "#bb9af7"
+cyan    = "#7dcfff"
+white   = "#c0caf5"
+
+[colors.bright]
+black   = "#414868"
+red     = "#f7768e"
+green   = "#73daca"
+yellow  = "#e0af68"
+blue    = "#7aa2f7"
+magenta = "#bb9af7"
+cyan    = "#7dcfff"
+white   = "#c0caf5"
+

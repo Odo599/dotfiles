@@ -230,7 +230,6 @@
 
         # applications
         alacritty
-        kitty
         nemo
         vscode
         calibre

@@ -11,7 +11,7 @@
       ###################
       ### MY PROGRAMS ###
       ###################
-      "$terminal" = "kitty --title=kitty";
+      "$terminal" = "alacritty";
       "$fileManager" = "nemo";
       "$menu" = "pidof rofi || rofi -show drun";
       "$browser" = "firefox";

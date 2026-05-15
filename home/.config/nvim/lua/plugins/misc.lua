@@ -18,6 +18,9 @@ return {
         config = function() require("FTerm").setup({
             border = "rounded"
         }) end,
+    },
+    {
+        "xiyaowong/transparent.nvim",
+        lazy = false
     }
- 
 }
