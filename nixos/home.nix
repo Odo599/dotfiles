@@ -9,7 +9,7 @@ let
 in
 {
     imports = [
-        ../hypr/hyprland.nix
+        ./modules/hyprland/hyprland.nix
         inputs.ags.homeManagerModules.default
     ]
     ++ (if builtins.pathExists hyprland_specific then [ hyprland_specific ] else [ ]);
