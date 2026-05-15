@@ -10,7 +10,7 @@ Scope {
     id: root
     property string textColor: "#E6E6FA"
     property string bgColor: "#0B0C0C"
-    property string selectedColor: "#FFD700"
+    property string selectedColor: "#007DFF"
     property string transparent: "#00000000"
     property string dividerColor: "#999999"
 
