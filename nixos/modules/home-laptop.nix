@@ -16,4 +16,10 @@
         "1.1.1.1"
         "8.8.8.8"
     ];
+
+    virtualisation.virtualbox.host = {
+        enable = true;
+        enableExtensionPack = true;
+    };
+    users.extraGroups.vboxusers.members = [ "odo59" ];
 }
