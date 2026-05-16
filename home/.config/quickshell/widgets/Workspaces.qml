@@ -10,7 +10,7 @@ Item {
     implicitHeight: row.implicitHeight
 
     function getIcon(w) {
-        if (w.window === "kitty") return "\uf120"
+        if (w.window === "alacritty") return "\uf120"
         else if (w.window === "___emptyworkspace___") return "\uf111"
         else if (w.window.toLowerCase().includes("firefox")) return "\ue007"
         else if (w.window.toLowerCase().includes("code")) return "\uf121"
