@@ -126,14 +126,13 @@
         desktopManager.plasma6.enable = true;
     };
 
-    # greetd
-    services.greetd = {
+    services.displayManager.sddm = {
         enable = true;
-        settings = {
-            default_session = {
-                command = "${pkgs.tuigreet}/bin/tuigreet --cmd start-hyprland --asterisks -r";
-            };
-        };
+    };
+
+    services.xserver = {
+        xkb.layout = "us";
+        xkb.variant = "dvorak";
     };
 
     # wayland security
