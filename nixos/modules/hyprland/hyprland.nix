@@ -129,8 +129,8 @@
       ### INPUT ###
       #############
       input = {
-        kb_layout = "us";
-        kb_variant = "dvorak";
+        kb_layout = "us,us";
+        kb_variant = "dvorak,";
         kb_options = "compose:ralt";
         follow_mouse = 1;
         sensitivity = 0;
@@ -168,6 +168,8 @@
         "$mainMod, E, exec, $fileManager"
         "$mainMod, V, togglefloating,"
         "$mainMod, SPACE, exec, $menu"
+        "CTRL, SPACE, exec, hyprctl switchxkblayout current next"
+        "CTRL, SPACE, exec, notify-send 'Switching keyboard layout'"
         "$mainMod, J, togglesplit,"
         "$mainMod, F, fullscreen"
         "$mainMod SHIFT, S, exec, hyprshot -m region"
