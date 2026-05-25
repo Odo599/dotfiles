@@ -14,11 +14,11 @@ fi
 STEP=5
 
 showvolume () {
-    eww update volumepercent=$VOL
-    eww update volumemuted=$MUTED
-    eww update openedtime=`date +%s%3N`
-    eww update volumewindowvisible=true
-    eww active-windows | grep volumepopup || eww open volumepopup
+    if [ "$MUTED" -eq 1 ]; then
+        dunstify -t 1000 -a "changeVolume" -r 123456789 -h int:value:"0" "Muted"
+    else
+        dunstify -t 1000 -a "changeVolume" -r 123456789 -h int:value:"$VOL" "Volume: $VOL%"
+    fi
 }
 
 case "$1" in
@@ -28,14 +28,12 @@ case "$1" in
         wpctl set-volume @DEFAULT_AUDIO_SINK@ "$(awk "BEGIN {print $VOL/100}")"
         MUTED=0
         wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
-        eww update volumepercent=$(VOL)
         showvolume
         ;;
     down)
         VOL=$((VOL - STEP))
         [ "$VOL" -lt 0 ] && VOL=0
         wpctl set-volume @DEFAULT_AUDIO_SINK@ "$(awk "BEGIN {print $VOL/100}")"
-        eww update volumepercent=$(VOL)
         showvolume
         ;;
     mute)
