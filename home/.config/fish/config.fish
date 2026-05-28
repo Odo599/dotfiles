@@ -8,6 +8,5 @@ if status is-interactive
     abbr --add exitup sudo tailscale set --exit-node=home-server
     abbr --add exitdown sudo tailscale set --exit-node=
 
-    eww shell-completions --shell fish | source
     zoxide init --cmd cd fish | source
 end
