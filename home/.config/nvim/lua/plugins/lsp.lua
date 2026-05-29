@@ -11,7 +11,7 @@ return {
         dependencies = { "williamboman/mason.nvim" },
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "pyright", "html", "ts_ls", "nil_ls" },
+                ensure_installed = { "pyright", "html", "nil_ls", "vtsls" },
             })
         end,
     },
@@ -30,26 +30,11 @@ return {
             })
             vim.lsp.config("html", {})
             vim.lsp.config("nil_ls", {})
-            vim.lsp.config("ts_ls", {
-                settings = {
-                    typescript = {
-                        inlayHints = {
-                            includeInlayParameterNameHints = "all",
-                            includeInlayVariableTypeHints = true,
-                        },
-                    },
-                    javascript = {
-                        inlayHints = {
-                            includeInlayParameterNameHints = "all",
-                            includeInlayVariableTypeHints = true,
-                        },
-                    },
-                },
-            })
+            vim.lsp.config("vtsls", {})
 
             vim.lsp.enable("pyright")
             vim.lsp.enable("html")
-            vim.lsp.enable("ts_ls")
+            vim.lsp.enable("vtsls")
             vim.lsp.enable("nil_ls")
 
             vim.keymap.set("n", "gd", vim.lsp.buf.definition)
