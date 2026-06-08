@@ -233,5 +233,6 @@
         calibre
         thunderbird
         vlc
+        chromium
     ];
 }
