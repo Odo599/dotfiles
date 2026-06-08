@@ -221,7 +221,7 @@
         xdg-desktop-portal
         xdg-desktop-portal-wlr
         networkmanagerapplet
-        feh
+        qview
         wlogout
         wl-clipboard
         quickshell
