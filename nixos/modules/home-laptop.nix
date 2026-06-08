@@ -22,4 +22,19 @@
         enableExtensionPack = true;
     };
     users.extraGroups.vboxusers.members = [ "odo59" ];
+
+    environment.systemPackages = with pkgs; [
+        postman
+        podman-compose
+    ];
+
+    virtualisation = {
+        podman = {
+            enable = true;
+            dockerCompat = true;
+            defaultNetwork.settings.dns_enabled = true;
+        };
+    };
+
+    users.users.odo59.extraGroups = [ "podman" ];
 }
