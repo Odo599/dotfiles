@@ -90,6 +90,12 @@ return {
         }) end, 
     },
     {
+        "esmuellert/nvim-eslint",
+        config = function()
+            require('nvim-eslint').setup({})
+        end,
+    },
+    {
         "folke/trouble.nvim",
         opts = {},
         cmd = "Trouble",
@@ -114,7 +120,7 @@ return {
         lazy = false,
         build = ':TSUpdate',
         config = function() 
-            require("nvim-treesitter").install({"typescript", "tsx"}) 
+            require("nvim-treesitter").install({"typescript", "tsx", "python"}) 
             vim.api.nvim_create_autocmd('FileType', {
                 pattern = { "typescriptreact" },
                 callback = function() vim.treesitter.start() end,
