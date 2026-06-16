@@ -234,5 +234,6 @@
         thunderbird
         vlc
         chromium
+        floorp-bin
     ];
 }
