@@ -12,6 +12,9 @@ return {
                         ".git/",
                     }
                 },
+                live_grep = {
+                    hidden = true
+                }
             }
         }) end
     },
