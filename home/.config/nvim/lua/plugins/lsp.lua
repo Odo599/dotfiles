@@ -116,15 +116,12 @@ return {
         config = function() require("nvim-ts-autotag").setup() end
     },
     {
-        'nvim-treesitter/nvim-treesitter',
-        lazy = false,
-        build = ':TSUpdate',
-        config = function() 
-            require("nvim-treesitter").install({"typescript", "tsx", "python"}) 
-            vim.api.nvim_create_autocmd('FileType', {
-                pattern = { "typescriptreact" },
-                callback = function() vim.treesitter.start() end,
+        "romus204/tree-sitter-manager.nvim",
+        dependencies = {},
+        config = function()
+            require("tree-sitter-manager").setup({
+                auto_install = true;
             })
-        end
+        end,
     }
 }
