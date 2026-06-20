@@ -87,21 +87,6 @@
         logind.settings.Login.HandlePowerKey = "ignore";
     };
 
-    # server samba mount
-    fileSystems."/mnt/smb0" = {
-        device = "//100.100.1.1/samba";
-        fsType = "cifs";
-        options =
-            let
-                automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
-            in
-            [
-                "${automount_opts},credentials=/etc/nixos/smb-secrets"
-                "uid=1000"
-                "gid=100"
-            ];
-    };
-
     # bluetooth
     hardware.bluetooth.enable = true;
 
@@ -137,6 +122,14 @@
 
     # wayland security
     security.polkit.enable = true;
+    security.wrappers."mount.cifs" = {
+        program = "mount.cifs";
+        source = "${lib.getBin pkgs.cifs-utils}/bin/mount.cifs";
+        owner = "root";
+        group = "root";
+        setuid = true;
+    };
+
 
     xdg.portal.enable = true;
 
@@ -228,12 +221,13 @@
 
         # applications
         alacritty
-        nemo
         vscode
         calibre
         thunderbird
         vlc
         chromium
         floorp-bin
+        kdePackages.dolphin
+        kdePackages.kservice
     ];
 }

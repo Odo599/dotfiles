@@ -12,7 +12,7 @@
       ### MY PROGRAMS ###
       ###################
       "$terminal" = "alacritty";
-      "$fileManager" = "nemo";
+      "$fileManager" = "dolphin";
       "$menu" = "pidof rofi || rofi -show drun";
       "$browser" = "floorp";
       "$code" = "code";
