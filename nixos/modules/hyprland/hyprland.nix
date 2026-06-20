@@ -14,7 +14,7 @@
       "$terminal" = "alacritty";
       "$fileManager" = "nemo";
       "$menu" = "pidof rofi || rofi -show drun";
-      "$browser" = "firefox";
+      "$browser" = "floorp";
       "$code" = "code";
       "$wlogout" = "pkill wlogout || wlogout";
 
